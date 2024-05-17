@@ -19,7 +19,7 @@
   };
 </script>
 
-<button class={`${stateObj[theme]} active:opacity-80 ${sizeObj[size]}`}>
+<button class={`${stateObj[theme]} active:opacity-80 ${sizeObj[size]} lg`}>
   <slot />
 </button>
 
