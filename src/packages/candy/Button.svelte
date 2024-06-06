@@ -1,18 +1,21 @@
 <script lang="ts">
-  export let type: "primary" | "default" | "danger" | "warning" | "info" =
+  import Icon from "./Icon.svelte";
+
+  export let type: "primary" | "default" | "error" | "warning" | "info" =
     "primary";
   // export let rounded: number = 4;
   export let circle: boolean = false;
   export let size: "large" | "middle" | "small" = "middle";
+  export let icon: string | undefined = undefined;
+  export let disabled: boolean = false;
 
   const defaultClass =
-    "box-border transition-all  flex font-medium cursor-pointer";
+    "candy-button box-border transition-all  inline-flex font-medium cursor-pointer items-center";
 
   const typeColorObj = {
     primary:
-      "text-primary border-1 border-solid border-primary bg-primary text-white",
-    danger:
-      "text-danger border-1 border-solid border-danger bg-danger text-white",
+      "border-1 border-solid border-primary bg-primary text-white fill-white",
+    error: "text-error border-1 border-solid border-error bg-error text-white",
     warning:
       "text-warning border-1 border-solid border-warning bg-warning text-white",
     info: "text-info border-1 border-solid border-info bg-info text-white",
@@ -36,13 +39,29 @@
       ? `rounded-[50%] ${roundedSizeObj[size]}`
       : `rounded-4 ${sizeObj[size]}`;
   };
+
+  $: disabledClass = () => {
+    return disabled
+      ? "cursor-not-allowed opacity-80 hover:opacity-80 active:opactiy:80"
+      : "";
+  };
+
+  $: iconClass = () => {
+    return icon ? "" : "";
+  };
 </script>
 
 <button
-  class={`${defaultClass} ${typeColorObj[type]} ${circleClass()} hover:opacity-80 active:opacity-90 `}
+  class={`${disabledClass()}  ${defaultClass} ${typeColorObj[type]} ${circleClass()} hover:opacity-80 active:opacity-80`}
 >
-  <slot />
+  {#if icon}
+    <Icon {icon} class={`${iconClass()}`}></Icon>
+  {/if}
+  <div><slot /></div>
 </button>
 
-<style lang="scss">
+<style lang="scss" scoped>
+  .candy-button svg + div {
+    margin-left: 5px;
+  }
 </style>

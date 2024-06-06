@@ -1,10 +1,10 @@
 const common = {
   colors: {
-    primary: "#409eff",
-    danger: "#f56c6c",
-    success: "#67c23a",
-    info: "#909399",
-    warning: "#e6a23c"
+    primary: "var(--theme-color-functional-primary)",
+    error: "var(--theme-color-functional-error)",
+    success: "var(--theme-color-functional-success)",
+    info: "var(--theme-color-functional-info)",
+    warning: "var(--theme-color-functional-warning)"
   }
 };
 

@@ -1,0 +1,17 @@
+:root {
+/* 初始 CSS 变量 */
+--theme-color-functional-primary: #409eff;
+--theme-color-functional-success: #67C23A;
+--theme-color-functional-warning: #E6A23C;
+--theme-color-functional-error: #F56C6C;
+--theme-color-functional-info: #909399;
+}
+
+
+#classy {
+--unocss-primary:#409eff;
+--unocss-danger:#f56c6c;
+--unocss-warning:#e6a23c;
+--unocss-info:#909399;
+--unocss-success:#67C23A;
+}
