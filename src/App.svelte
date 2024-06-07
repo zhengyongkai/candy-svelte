@@ -1,9 +1,16 @@
 <script lang="ts">
   import Button from "./packages/candy/Button.svelte";
   import Icon from "./packages/candy/Icon.svelte";
-
+  let loading = false;
   function onChange(e: any) {
     document.getElementsByTagName("body")[0].setAttribute("id", e.target.value);
+  }
+
+  function onLoading() {
+    loading = true;
+    setTimeout(() => {
+      loading = false;
+    }, 3000);
   }
 </script>
 
@@ -19,7 +26,7 @@
   <Button size={"middle"}>中等按钮</Button>
   <br />
   <h3>按钮状态</h3>
-  <Button size={"middle"} type="default">中等按钮</Button>
+
   <Button size={"middle"} type="error">中等按钮</Button> <br />
   <Button size={"middle"} type="info">中等按钮</Button> <br />
   <Button size={"middle"} type="warning">中等按钮</Button> <br />
@@ -29,16 +36,35 @@
   <br />
   <h3>圆角按钮</h3>
   <br />
-  <Button size={"large"} circle={true} icon="svelte"></Button>
+  <Button size={"large"} circle={true} icon="search"></Button>
+  <Button size={"large"} type="warning" circle={true} icon="star"></Button>
+
+  <Button size="large" type="error" circle={true} icon="trash" disabled />
+  <Button size="large" type="info" circle={true} icon="envelope" disabled />
   <br />
   <h3>带图标按钮</h3>
   <br />
-  <Button size={"large"} icon="svelte">在一块</Button>
+  <Button size={"middle"} icon="search"></Button>
+  <Button size={"middle"} icon="search">查询</Button>
+  <Button size={"middle"} type="warning">
+    啦啦啦<i class="fa fa-trash ml-5" />
+  </Button>
+  <Button size={"middle"} type="error" icon="trash" disabled>删除</Button>
   <br />
   <br />
   <h3>禁用按钮</h3>
   <br />
-  <Button size={"large"} disabled>在一块</Button>
+
+  <Button size={"middle"} type="error" disabled>中等按钮</Button> <br />
+  <Button size={"middle"} type="info" disabled>中等按钮</Button> <br />
+  <Button size={"middle"} type="warning" disabled>中等按钮</Button> <br />
+  <Button size={"middle"} type="primary" disabled>中等按钮</Button> <br />
+  <h3>加载状态</h3>
+
+  <Button {loading}>加载按钮</Button>
+  {loading}
+  <Button size={"middle"} on:click={onLoading}>加载3s</Button> <br />
+  <br />
   <br />
 </main>
 
