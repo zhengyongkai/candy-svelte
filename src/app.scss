@@ -1,17 +1,49 @@
 :root {
-/* 初始 CSS 变量 */
---theme-color-functional-primary: #409eff;
---theme-color-functional-success: #67C23A;
---theme-color-functional-warning: #E6A23C;
---theme-color-functional-error: #F56C6C;
---theme-color-functional-info: #909399;
+  /* 初始 CSS 变量 */
+  --theme-color-primary: #409eff;
+  --theme-color-primary-hover: #4098fc;
+  --theme-color-primary-active: #1060c9;
+  --theme-color-primary-disabled: #2080f0;
+
+  --theme-color-success: #67c23a;
+  --theme-color-success-hover: #36ad6a;
+  --theme-color-success-active: #0c7a43;
+  --theme-color-success-disabled: #18a058;
+
+  --theme-color-warning: #e6a23c;
+  --theme-color-warning-hover: #fcb040;
+  --theme-color-warning-active: #c97c10;
+  --theme-color-warning-disabled: #f0a020;
+
+  --theme-color-error: #f56c6c;
+  --theme-color-error-hover: #de576d;
+  --theme-color-error-active: #ab1f3f;
+  --theme-color-error-disabled: #d03050;
+
+  --theme-color-info: #909399;
+  --theme-color-info-hover: #909399;
+  --theme-color-info-active: #909399;
+  --theme-color-info-disabled: #2080f0;
 }
 
-
 #classy {
-    --theme-color-functional-primary: #409eff;
-    --theme-color-functional-success: #67C23A;
-    --theme-color-functional-warning: #E6A23C;
-    --theme-color-functional-error: #F56C6C;
-    --theme-color-functional-info: #909399;
+  --theme-color-primary: #409eff;
+  --theme-color-primary-hover: #409eff;
+  --theme-color-primary-active: #409eff;
+
+  --theme-color-success: #67c23a;
+  --theme-color-success-hover: #67c23a;
+  --theme-color-success-active: #67c23a;
+
+  --theme-color-warning: #e6a23c;
+  --theme-color-warning-hover: #e6a23c;
+  --theme-color-warning-active: #e6a23c;
+
+  --theme-color-error: #f56c6c;
+  --theme-color-error-hover: #f56c6c;
+  --theme-color-error-active: #f56c6c;
+
+  --theme-color-info: #909399;
+  --theme-color-info-hover: #909399;
+  --theme-color-info-active: #909399;
 }
